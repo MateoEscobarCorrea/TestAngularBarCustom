@@ -1,0 +1,29 @@
+.toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+}
+.toolbar-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+  button {
+    font-size: 13px;
+    min-width: auto;
+    text-transform: none;
+  }
+
+  mat-divider[vertical] {
+      height: 24px;
+      margin: 0 6px;
+      border-left: 1px solid #bbb;
+  }
+}

@@ -1,0 +1,44 @@
+<app-action-toolbar
+      [canEdit]="selectedPayment !== null"
+      [canDelete]="selectedPayment !== null"
+      [canSave]="true"
+      [canList]="true"
+      (create)="onCreate()"
+      (edit)="onEdit()"
+      (delete)="onDelete()"
+      (save)="onSave()"
+      (list)="onList()"
+    ></app-action-toolbar>
+<mat-card class="cardWithShadow theme-card" style="padding: 0; overflow: hidden;">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Payments</mat-card-title>
+  </mat-card-header>
+  <mat-card-content style="padding: 16px;">
+    <dx-data-grid
+      [dataSource]="payments"
+      [showBorders]="true"
+      [columnAutoWidth]="true"
+      [allowColumnResizing]="true"
+      [selection]="{ mode: 'single' }"
+      [height]="'500px'"
+    >
+      <dxo-paging [pageSize]="10"></dxo-paging>
+      <dxo-pager
+        [showPageSizeSelector]="true"
+        [showInfo]="true"
+        [showNavigationButtons]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+      ></dxo-pager>
+
+      <dxi-column dataField="id" caption="ID" [width]="60"></dxi-column>
+      <dxi-column dataField="date" caption="Date" dataType="date"></dxi-column>
+      <dxi-column
+        dataField="amount"
+        caption="Amount"
+        dataType="number"
+        format="currency"
+      ></dxi-column>
+      <dxi-column dataField="description" caption="Description"></dxi-column>
+    </dx-data-grid>
+  </mat-card-content>
+</mat-card>

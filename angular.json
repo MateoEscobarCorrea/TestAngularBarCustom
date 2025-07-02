@@ -27,6 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.material.blue.light.css",
               "src/styles.scss",
               "src/assets/scss/style.scss"
             ],

@@ -9,10 +9,10 @@ export const navItems: NavItem[] = [
     iconName: 'solar:atom-line-duotone',
     route: '/dashboard',
   },
-  {
+  /*{
     displayName: 'Analytics',
     iconName: 'solar:widget-add-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/dashboards/dashboard1',
+    route: '/dashboards/dashboard1',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -21,7 +21,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'eCommerce',
     iconName: 'solar:chart-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/dashboards/dashboard2',
+    route: '/dashboards/dashboard2',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -30,21 +30,30 @@ export const navItems: NavItem[] = [
   {
     displayName: 'CRM',
     iconName: 'solar:screencast-2-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/dashboards/dashboard3',
+    route: '/dashboards/dashboard3',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
     chipContent: 'PRO',
+  },*/
+  {
+    navCap: 'DevExpress',
+    divider: true
+  },
+  {
+    displayName: 'Payments',
+    iconName: 'solar:password-minimalistic-input-line-duotone',
+    route: '/ui-components/payments',
   },
 
-  {
+  /*{
     divider: true,
     navCap: 'Apps',
   },
   {
     displayName: 'Chat',
     iconName: 'solar:chat-round-line-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/chat',
+    route: '/apps/chat',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -53,7 +62,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Calendar',
     iconName: 'solar:calendar-mark-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/calendar',
+    route: '/apps/calendar',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -62,7 +71,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Email',
     iconName: 'solar:letter-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/email/inbox',
+    route: '/apps/email/inbox',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -71,7 +80,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Kanban',
     iconName: 'solar:clapperboard-edit-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/kanban',
+    route: '/apps/kanban',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -80,7 +89,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Contacts',
     iconName: 'solar:phone-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/contacts',
+    route: '/apps/contacts',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -89,7 +98,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'ContactsApp',
     iconName: 'solar:phone-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/contact-list',
+    route: '/apps/contact-list',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -98,7 +107,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Courses',
     iconName: 'solar:book-bookmark-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/courses',
+    route: '/apps/courses',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -107,7 +116,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Employee',
     iconName: 'solar:user-id-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/employee',
+    route: '/apps/employee',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -116,7 +125,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Notes',
     iconName: 'solar:document-text-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/notes',
+    route: '/apps/notes',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -125,7 +134,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Tickets',
     iconName: 'solar:ticket-sale-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/tickets',
+    route: '/apps/tickets',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -134,7 +143,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'ToDo',
     iconName: 'solar:airbuds-case-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/todo',
+    route: '/apps/todo',
     chip: true,
     external: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -145,12 +154,12 @@ export const navItems: NavItem[] = [
     iconName: 'solar:bill-list-line-duotone',
     route: '',
     chip: true,
-    
+
     children: [
       {
         displayName: 'List',
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/invoice',
+        route: '/apps/invoice',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -159,7 +168,7 @@ export const navItems: NavItem[] = [
       {
         displayName: 'Detail',
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/viewInvoice/101',
+        route: '/apps/viewInvoice/101',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -168,7 +177,7 @@ export const navItems: NavItem[] = [
       {
         displayName: 'Create',
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/addInvoice',
+        route: '/apps/addInvoice',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -177,7 +186,7 @@ export const navItems: NavItem[] = [
       {
         displayName: 'Edit',
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/editinvoice/101',
+        route: '/apps/editinvoice/101',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -190,13 +199,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:widget-4-line-duotone',
     route: 'apps/blog',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Post',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/blog/post',
+        route: '/apps/blog/post',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -206,7 +215,7 @@ export const navItems: NavItem[] = [
         displayName: 'Detail',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/apps/blog/detail/Early Black Friday Amazon deals: cheap TVs, headphones, laptops',
+        route: '/apps/blog/detail/Early Black Friday Amazon deals: cheap TVs, headphones, laptops',
         chip: true,
         external: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -257,7 +266,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Expansion Panel',
     iconName: 'solar:inbox-archive-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/expansion',
+    route: '/ui-components/expansion',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -266,7 +275,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Dialog',
     iconName: 'solar:bolt-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/dialog',
+    route: '/ui-components/dialog',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -275,7 +284,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Divider',
     iconName: 'solar:menu-dots-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/divider',
+    route: '/ui-components/divider',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -284,7 +293,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Paginator',
     iconName: 'solar:tuning-2-bold-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/paginator',
+    route: '/ui-components/paginator',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -293,7 +302,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Progress Bar',
     iconName: 'solar:restart-bold-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/progress',
+    route: '/ui-components/progress',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -302,7 +311,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Progress Spinner',
     iconName: 'solar:refresh-circle-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/progress-spinner',
+    route: '/ui-components/progress-spinner',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -311,7 +320,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Ripples',
     iconName: 'solar:branching-paths-up-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/ripples',
+    route: '/ui-components/ripples',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -320,7 +329,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Slide Toggle',
     iconName: 'solar:round-alt-arrow-right-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/slide-toggle',
+    route: '/ui-components/slide-toggle',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -329,7 +338,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Slider',
     iconName: 'solar:tuning-3-bold-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/slider',
+    route: '/ui-components/slider',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -338,7 +347,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Snackbar',
     iconName: 'solar:layers-minimalistic-bold-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/snackbar',
+    route: '/ui-components/snackbar',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -347,7 +356,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Tabs',
     iconName: 'solar:box-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/tabs',
+    route: '/ui-components/tabs',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -356,7 +365,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Toolbar',
     iconName: 'solar:balloon-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/toolbar',
+    route: '/ui-components/toolbar',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -365,7 +374,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Tooltips',
     iconName: 'solar:feed-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/ui-components/tooltips',
+    route: '/ui-components/tooltips',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -379,7 +388,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Roll Base Access',
     iconName: 'solar:lock-password-unlocked-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/apps/permission',
+    route: '/apps/permission',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -388,7 +397,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Treeview',
     iconName: 'solar:bill-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/theme-pages/treeview',
+    route: '/theme-pages/treeview',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -397,7 +406,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Pricing',
     iconName: 'solar:dollar-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/theme-pages/pricing',
+    route: '/theme-pages/pricing',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -406,7 +415,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Account Setting',
     iconName: 'solar:accessibility-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/theme-pages/account-setting',
+    route: '/theme-pages/account-setting',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -415,7 +424,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'FAQ',
     iconName: 'solar:question-square-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/theme-pages/faq',
+    route: '/theme-pages/faq',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -424,7 +433,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Landingpage',
     iconName: 'solar:layers-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/landingpage',
+    route: '/landingpage',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -435,13 +444,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:widget-2-line-duotone',
     route: 'widgets',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Cards',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/widgets/cards',
+        route: '/widgets/cards',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -451,7 +460,7 @@ export const navItems: NavItem[] = [
         displayName: 'Banners',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/widgets/banners',
+        route: '/widgets/banners',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -461,7 +470,7 @@ export const navItems: NavItem[] = [
         displayName: 'Charts',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/widgets/charts',
+        route: '/widgets/charts',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -494,13 +503,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:password-minimalistic-input-line-duotone',
     route: 'forms/forms-elements',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Autocomplete',
         subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/forms/forms-elements/autocomplete',
+        route: '/forms/forms-elements/autocomplete',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -510,7 +519,7 @@ export const navItems: NavItem[] = [
         displayName: 'Button',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/forms/forms-elements/button',
+        route: '/forms/forms-elements/button',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -520,7 +529,7 @@ export const navItems: NavItem[] = [
         displayName: 'Checkbox',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/forms/forms-elements/checkbox',
+        route: '/forms/forms-elements/checkbox',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -530,7 +539,7 @@ export const navItems: NavItem[] = [
         displayName: 'Radio',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/forms/forms-elements/radio',
+        route: '/forms/forms-elements/radio',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -540,7 +549,7 @@ export const navItems: NavItem[] = [
         displayName: 'Datepicker',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/forms/forms-elements/datepicker',
+        route: '/forms/forms-elements/datepicker',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -551,7 +560,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Form Layouts',
     iconName: 'solar:file-text-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/forms/form-layouts',
+    route: '/forms/form-layouts',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -560,7 +569,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Form Horizontal',
     iconName: 'solar:align-horizonta-spacing-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/forms/form-horizontal',
+    route: '/forms/form-horizontal',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -569,7 +578,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Form Vertical',
     iconName: 'solar:align-vertical-spacing-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/forms/form-vertical',
+    route: '/forms/form-vertical',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -578,7 +587,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Form Wizard',
     iconName: 'solar:archive-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/forms/form-wizard',
+    route: '/forms/form-wizard',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -587,7 +596,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Toastr',
     iconName: 'solar:notification-lines-remove-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/forms/form-toastr',
+    route: '/forms/form-toastr',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -603,13 +612,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:tablet-line-duotone',
     route: 'tables',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Basic Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/basic-table',
+        route: '/tables/basic-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -619,7 +628,7 @@ export const navItems: NavItem[] = [
         displayName: 'Dynamic Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/dynamic-table',
+        route: '/tables/dynamic-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -629,7 +638,7 @@ export const navItems: NavItem[] = [
         displayName: 'Expand Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/expand-table',
+        route: '/tables/expand-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -639,7 +648,7 @@ export const navItems: NavItem[] = [
         displayName: 'Filterable Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/filterable-table',
+        route: '/tables/filterable-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -649,7 +658,7 @@ export const navItems: NavItem[] = [
         displayName: 'Footer Row Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/footer-row-table',
+        route: '/tables/footer-row-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -659,7 +668,7 @@ export const navItems: NavItem[] = [
         displayName: 'HTTP Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/http-table',
+        route: '/tables/http-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -669,7 +678,7 @@ export const navItems: NavItem[] = [
         displayName: 'Mix Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/mix-table',
+        route: '/tables/mix-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -679,7 +688,7 @@ export const navItems: NavItem[] = [
         displayName: 'Multi Header Footer',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/multi-header-footer-table',
+        route: '/tables/multi-header-footer-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -689,7 +698,7 @@ export const navItems: NavItem[] = [
         displayName: 'Pagination Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/pagination-table',
+        route: '/tables/pagination-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -699,7 +708,7 @@ export const navItems: NavItem[] = [
         displayName: 'Row Context Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/row-context-table',
+        route: '/tables/row-context-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -709,7 +718,7 @@ export const navItems: NavItem[] = [
         displayName: 'Selection Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/selection-table',
+        route: '/tables/selection-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -719,7 +728,7 @@ export const navItems: NavItem[] = [
         displayName: 'Sortable Table',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/sortable-table',
+        route: '/tables/sortable-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -729,7 +738,7 @@ export const navItems: NavItem[] = [
         displayName: 'Sticky Column',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/sticky-column-table',
+        route: '/tables/sticky-column-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -739,7 +748,7 @@ export const navItems: NavItem[] = [
         displayName: 'Sticky Header Footer',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/tables/sticky-header-footer-table',
+        route: '/tables/sticky-header-footer-table',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -750,7 +759,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Data table',
     iconName: 'solar:database-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/datatable/kichen-sink',
+    route: '/datatable/kichen-sink',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -764,7 +773,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Line',
     iconName: 'solar:align-top-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/line',
+    route: '/charts/line',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -773,7 +782,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Gredient',
     iconName: 'solar:bolt-circle-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/gredient',
+    route: '/charts/gredient',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -782,7 +791,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Area',
     iconName: 'solar:chart-square-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/area',
+    route: '/charts/area',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -791,7 +800,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Candlestick',
     iconName: 'solar:align-left-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/candlestick',
+    route: '/charts/candlestick',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -800,7 +809,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Column',
     iconName: 'solar:chart-2-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/column',
+    route: '/charts/column',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -809,7 +818,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Doughnut & Pie',
     iconName: 'solar:pie-chart-2-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/doughnut-pie',
+    route: '/charts/doughnut-pie',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -818,7 +827,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Radialbar & Radar',
     iconName: 'solar:align-vertical-center-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/charts/radial-radar',
+    route: '/charts/radial-radar',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -844,7 +853,7 @@ export const navItems: NavItem[] = [
         displayName: 'Side Login',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/login',
+        route: '/authentication/login',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -867,7 +876,7 @@ export const navItems: NavItem[] = [
         displayName: 'Side Register',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/side-register',
+        route: '/authentication/side-register',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -880,13 +889,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:password-outline',
     route: '/authentication',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Side Forgot Pwd',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/side-forgot-pwd',
+        route: '/authentication/side-forgot-pwd',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -896,7 +905,7 @@ export const navItems: NavItem[] = [
         displayName: 'Boxed Forgot Pwd',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/boxed-forgot-pwd',
+        route: '/authentication/boxed-forgot-pwd',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -909,13 +918,13 @@ export const navItems: NavItem[] = [
     iconName: 'solar:siderbar-line-duotone',
     route: '/authentication',
     chip: true,
-    
+
     children: [
       {
         displayName: 'Side Two Steps',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/side-two-steps',
+        route: '/authentication/side-two-steps',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -925,7 +934,7 @@ export const navItems: NavItem[] = [
         displayName: 'Boxed Two Steps',
          subItemIcon: true,
         iconName: 'solar:round-alt-arrow-right-line-duotone',
-        route: 'https://materialm-angular-main.netlify.app/authentication/boxed-two-steps',
+        route: '/authentication/boxed-two-steps',
         external: true,
         chip: true,
         chipClass: 'bg-light-secondary text-secondary',
@@ -936,7 +945,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Error',
     iconName: 'solar:bug-minimalistic-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/authentication/error',
+    route: '/authentication/error',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
@@ -945,11 +954,11 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Maintenance',
     iconName: 'solar:settings-line-duotone',
-    route: 'https://materialm-angular-main.netlify.app/authentication/maintenance',
+    route: '/authentication/maintenance',
     external: true,
     chip: true,
     chipClass: 'bg-light-secondary text-secondary',
     chipContent: 'PRO',
-  },
-  
+  },*/
+
 ];

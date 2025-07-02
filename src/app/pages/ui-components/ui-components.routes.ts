@@ -8,11 +8,16 @@ import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { AppFormsComponent } from './forms/forms.component';
 import { AppTablesComponent } from './tables/tables.component';
+import { PaymentsComponent } from '../payments/payments.component';
 
 export const UiComponentsRoutes: Routes = [
   {
     path: '',
     children: [
+      {
+        path: 'payments',
+        component: PaymentsComponent,
+      },
       {
         path: 'badge',
         component: AppBadgeComponent,
