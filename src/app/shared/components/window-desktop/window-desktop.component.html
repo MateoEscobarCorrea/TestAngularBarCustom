@@ -1,0 +1,12 @@
+<div class="desktop-container">
+  <ng-container *ngFor="let win of windowService.windows">
+    <app-window
+      [component]="win.component"
+      [data]="win.data"
+      [title]="win.title"
+      (closed)="windowService.close(win)"
+      (focusedEvent)="windowService.focus(win)"
+      [focused]="windowService.focused === win"
+    ></app-window>
+  </ng-container>
+</div>
