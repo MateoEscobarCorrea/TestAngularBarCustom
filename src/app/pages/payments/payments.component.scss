@@ -1,0 +1,23 @@
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-field {
+  min-width: 240px;
+}
+
+.half {
+  flex: 1 1 calc(50% - 8px); // 2 elementos en fila con espacio
+}
+
+.full {
+  flex: 1 1 100%; // ancho completo
+}

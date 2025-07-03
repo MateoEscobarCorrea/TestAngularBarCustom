@@ -1,26 +1,60 @@
 <app-action-toolbar
-      [canEdit]="selectedPayment !== null"
-      [canDelete]="selectedPayment !== null"
-      [canSave]="true"
-      [canList]="true"
-      (create)="onCreate()"
-      (edit)="onEdit()"
-      (delete)="onDelete()"
-      (save)="onSave()"
-      (list)="onList()"
-    ></app-action-toolbar>
-<mat-card class="cardWithShadow theme-card" style="padding: 0; overflow: hidden;">
+  [canEdit]="selectedPayment !== null"
+  [canDelete]="selectedPayment !== null"
+  [canSave]="true"
+  [canList]="true"
+  (create)="onCreate()"
+  (edit)="onEdit()"
+  (delete)="onDelete()"
+  (save)="onSave()"
+  (list)="onList()"
+></app-action-toolbar>
+
+<mat-card class="cardWithShadow theme-card" style="padding: 0">
   <mat-card-header>
     <mat-card-title class="m-b-0">Payments</mat-card-title>
   </mat-card-header>
-  <mat-card-content style="padding: 16px;">
+
+  <!-- FORMULARIO -->
+  <mat-card-content class="form-section">
+    <form class="payment-form" #paymentForm="ngForm">
+  <!-- Fila 1: Date + Amount -->
+  <div class="form-row">
+    <mat-form-field appearance="outline" class="form-field half" style="width: 49%; margin-right: 2%;">
+      <mat-label>Date</mat-label>
+      <mat-icon matPrefix>event</mat-icon>
+      <input matInput type="date" [(ngModel)]="formModel.date" name="date" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field half" style="width: 49%;">
+      <mat-label>Amount</mat-label>
+      <mat-icon matPrefix>attach_money</mat-icon>
+      <input matInput type="number" [(ngModel)]="formModel.amount" name="amount" required />
+    </mat-form-field>
+  </div>
+
+  <!-- Fila 2: Description -->
+  <div class="form-row">
+    <mat-form-field appearance="outline" class="form-field full" style="width: 100%;">
+      <mat-label>Description</mat-label>
+      <mat-icon matPrefix>notes</mat-icon>
+      <textarea matInput [(ngModel)]="formModel.description" name="description" required rows="2" cols="2" ></textarea>
+    </mat-form-field>
+  </div>
+</form>
+  </mat-card-content>
+
+  <!-- GRID -->
+  <mat-card-content style="padding: 16px">
     <dx-data-grid
+      #dataGrid
       [dataSource]="payments"
       [showBorders]="true"
       [columnAutoWidth]="true"
       [allowColumnResizing]="true"
       [selection]="{ mode: 'single' }"
-      [height]="'500px'"
+      [height]="'400px'"
+      (onRowClick)="onRowClick($event)"
     >
       <dxo-paging [pageSize]="10"></dxo-paging>
       <dxo-pager
