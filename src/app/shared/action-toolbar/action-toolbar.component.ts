@@ -14,6 +14,7 @@ export class ActionToolbarComponent {
   @Input() canDelete = false;
   @Input() canSave = false;
   @Input() canList = false;
+  @Input() canExport = false;
 
   @Output() create = new EventEmitter<void>();
   @Output() edit = new EventEmitter<void>();
@@ -21,6 +22,7 @@ export class ActionToolbarComponent {
   @Output() delete = new EventEmitter<void>();
   @Output() search = new EventEmitter<void>();
   @Output() list = new EventEmitter<void>();
+  @Output() export = new EventEmitter<void>();
 
   // Escuchar teclas globales
   @HostListener('window:keydown', ['$event'])
@@ -37,6 +39,10 @@ export class ActionToolbarComponent {
         event.preventDefault();
         this.save.emit();
         break;
-    }
-  }
+      case 'F11':
+        event.preventDefault();
+        this.export.emit();
+        break;
+    }
+  }
 }

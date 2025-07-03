@@ -16,7 +16,7 @@
 
       <!-- Acciones -->
       <button mat-button (click)="create.emit()">
-        <mat-icon>add</mat-icon> New
+        <mat-icon>add</mat-icon> New (F2)
       </button>
 
       <button mat-button (click)="edit.emit()" [disabled]="!canEdit">
@@ -24,7 +24,7 @@
       </button>
 
       <button mat-button (click)="save.emit()" [disabled]="!canSave">
-        <mat-icon>save</mat-icon> Save
+        <mat-icon>save</mat-icon> Save (F5)
       </button>
 
       <button mat-button (click)="delete.emit()" [disabled]="!canDelete">
@@ -32,12 +32,12 @@
       </button>
 
       <button mat-button color="accent" (click)="list.emit()" [disabled]="!canList">
-        <mat-icon>list</mat-icon> List
+        <mat-icon>list</mat-icon> List (F9)
       </button>
 
       <mat-divider vertical></mat-divider>
 
-      <button mat-button><mat-icon>upload_file</mat-icon> Export</button>
+      <button mat-button (click)="export.emit()"  [disabled]="!canExport"><mat-icon>upload_file</mat-icon> Export (F11)</button>
 
       <button mat-button><mat-icon>filter_list</mat-icon> Filter</button>
 

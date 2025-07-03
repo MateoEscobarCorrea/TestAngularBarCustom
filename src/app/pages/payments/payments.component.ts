@@ -82,4 +82,8 @@ export class PaymentsComponent implements OnInit {
       });
     }
   }
+
+  onExport(){
+    alert("va");
+  }
 }

@@ -3,11 +3,13 @@
   [canDelete]="selectedPayment !== null"
   [canSave]="true"
   [canList]="true"
+  [canExport]="true"
   (create)="onCreate()"
   (edit)="onEdit()"
   (delete)="onDelete()"
   (save)="onSave()"
   (list)="onList()"
+  (export)="onExport()"
 ></app-action-toolbar>
 
 <mat-card class="cardWithShadow theme-card" style="padding: 0">
