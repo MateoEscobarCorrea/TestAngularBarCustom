@@ -17,7 +17,6 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Payments',
     iconName: 'solar:password-minimalistic-input-line-duotone',
-    route: '/ui-components/payments',
     component: PaymentsComponent
   },
 

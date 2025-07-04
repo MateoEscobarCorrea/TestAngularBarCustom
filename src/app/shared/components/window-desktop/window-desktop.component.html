@@ -1,12 +1,14 @@
 <div class="desktop-container">
-  <ng-container *ngFor="let win of windowService.windows">
+  <ng-container *ngFor="let win of windowService.windows; trackBy: trackByFn">
     <app-window
-      [component]="win.component"
-      [data]="win.data"
-      [title]="win.title"
-      [focused]="windowService.focused === win"
-      (closed)="windowService.close(win)"
-      (focusedEvent)="windowService.focus(win)"
-    ></app-window>
+        *ngFor="let win of windowService.windows; trackBy: trackByFn"
+        [component]="win.component"
+        [data]="win.data"
+        [title]="win.title"
+        [windowInstance]="win"
+        [focused]="windowService.focused === win"
+        (closed)="windowService.close(win)"
+        (focusedEvent)="windowService.focus(win)"
+      ></app-window>
   </ng-container>
 </div>

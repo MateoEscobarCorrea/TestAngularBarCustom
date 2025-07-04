@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgForOf } from '@angular/common';
 import { WindowComponent } from '../window/window.component';
-import { WindowService } from '../../services/window.service';
+import { WindowInstance, WindowService } from '../../services/window.service';
 
 @Component({
   selector: 'app-window-desktop',
@@ -12,4 +12,8 @@ import { WindowService } from '../../services/window.service';
 })
 export class WindowDesktopComponent {
   constructor(public windowService: WindowService) {}
+
+  trackByFn(index: number, win: WindowInstance): string {
+    return win.id;
+  }
 }

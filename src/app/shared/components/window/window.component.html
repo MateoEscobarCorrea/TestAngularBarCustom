@@ -1,17 +1,28 @@
 <div
   class="app-window"
   [class.focused]="focused"
+  [class.maximized]="isMaximized"
   cdkDrag
+  cdkDragHandle
   (mousedown)="onFocus()"
+  *ngIf="!isMinimized"
 >
-  <div class="app-window-header" cdkDragHandle>
+  <div class="app-window-header">
     <span class="title">{{ title }}</span>
-    <button mat-icon-button (click)="closed.emit()">
-      <mat-icon>close</mat-icon>
-    </button>
+    <div class="window-actions">
+      <button mat-icon-button (click)="toggleMinimize()" class="minimize-btn" [disabled]="isMaximized">
+        <mat-icon>minimize</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleMaximize()" class="maximize-btn">
+        <mat-icon>{{ isMaximized ? 'fullscreen_exit' : 'fullscreen' }}</mat-icon>
+      </button>
+      <button mat-icon-button (click)="closed.emit()" class="close-btn">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
   </div>
 
   <div class="app-window-content">
-    <ng-container *ngComponentOutlet="component; injector: createInjector()"></ng-container>
+    <ng-template #container></ng-template>
   </div>
 </div>

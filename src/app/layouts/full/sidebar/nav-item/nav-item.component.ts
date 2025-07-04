@@ -16,6 +16,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { CommonModule } from '@angular/common';
 
 import { WindowService } from 'src/app/shared/services/window.service';
+import { PaymentsComponent } from 'src/app/pages/payments/payments.component';
 
 @Component({
   selector: 'app-nav-item',
@@ -34,6 +35,12 @@ export class AppNavItemComponent implements OnChanges {
   @Input() depth: any;
 
   constructor(public navService: NavService, public router: Router, private windowService: WindowService) {}
+
+  openItem() {
+    if (this.item.component) {
+      this.windowService.open(this.item.component, this.item.displayName || 'Ventana');
+    }
+  }
 
   ngOnChanges() {
     const url = this.navService.currentUrl();

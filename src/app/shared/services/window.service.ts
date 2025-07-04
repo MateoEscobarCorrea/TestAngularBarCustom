@@ -2,6 +2,7 @@ import { Injectable, Type } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface WindowInstance {
+  id: string,
   component: Type<any>;
   data?: any;
   title: string;
@@ -17,7 +18,7 @@ export class WindowService {
   focusedWindow$ = this.focusedWindowSubject.asObservable();
 
   open(component: Type<any>, title: string, data?: any) {
-    const win: WindowInstance = { component, title, data };
+    const win: WindowInstance = { id: crypto.randomUUID(), component, title, data };
     this.windows.push(win);
     this.focus(win);
   }
