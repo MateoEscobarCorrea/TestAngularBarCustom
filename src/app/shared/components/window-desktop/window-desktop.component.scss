@@ -1,0 +1,6 @@
+.desktop-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px); // assuming toolbar is 64px
+  overflow: hidden;
+}

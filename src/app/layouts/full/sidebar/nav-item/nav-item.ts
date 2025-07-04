@@ -1,3 +1,5 @@
+import { Type } from '@angular/core';
+
 export interface NavItem {
   displayName?: string;
   divider?: boolean;
@@ -10,4 +12,5 @@ export interface NavItem {
   chipClass?: string;
   external?: boolean;
   subItemIcon?: boolean;
+  component?: Type<any>;
 }

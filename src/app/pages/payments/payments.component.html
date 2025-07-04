@@ -1,17 +1,3 @@
-<app-action-toolbar
-  [canEdit]="selectedPayment !== null"
-  [canDelete]="selectedPayment !== null"
-  [canSave]="true"
-  [canList]="true"
-  [canExport]="true"
-  (create)="onCreate()"
-  (edit)="onEdit()"
-  (delete)="onDelete()"
-  (save)="onSave()"
-  (list)="onList()"
-  (export)="onExport()"
-></app-action-toolbar>
-
 <mat-card class="cardWithShadow theme-card" style="padding: 0">
   <mat-card-header>
     <mat-card-title class="m-b-0">Payments</mat-card-title>

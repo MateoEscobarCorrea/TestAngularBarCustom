@@ -17,6 +17,9 @@ import { AppNavItemComponent } from './sidebar/nav-item/nav-item.component';
 import { navItems } from './sidebar/sidebar-data';
 import { AppTopstripComponent } from './top-strip/topstrip.component';
 
+import { ActionToolbarComponent } from 'src/app/shared/action-toolbar/action-toolbar.component';
+import { WindowDesktopComponent } from 'src/app/shared/components/window-desktop/window-desktop.component';
+
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
 
@@ -32,7 +35,9 @@ const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
     NgScrollbarModule,
     TablerIconsModule,
     HeaderComponent,
-    AppTopstripComponent
+    AppTopstripComponent,
+    ActionToolbarComponent,
+    WindowDesktopComponent
   ],
   templateUrl: './full.component.html',
   styleUrls: [],

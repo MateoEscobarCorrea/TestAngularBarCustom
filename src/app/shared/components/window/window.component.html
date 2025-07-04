@@ -1,0 +1,17 @@
+<div
+  class="app-window"
+  [class.focused]="focused"
+  cdkDrag
+  (mousedown)="onFocus()"
+>
+  <div class="app-window-header" cdkDragHandle>
+    <span class="title">{{ title }}</span>
+    <button mat-icon-button (click)="closed.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="app-window-content">
+    <ng-container *ngComponentOutlet="component; injector: createInjector()"></ng-container>
+  </div>
+</div>

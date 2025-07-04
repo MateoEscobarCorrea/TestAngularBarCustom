@@ -15,6 +15,8 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 import { CommonModule } from '@angular/common';
 
+import { WindowService } from 'src/app/shared/services/window.service';
+
 @Component({
   selector: 'app-nav-item',
   imports: [TranslateModule, TablerIconsModule, MaterialModule, CommonModule],
@@ -31,7 +33,7 @@ export class AppNavItemComponent implements OnChanges {
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() depth: any;
 
-  constructor(public navService: NavService, public router: Router) {}
+  constructor(public navService: NavService, public router: Router, private windowService: WindowService) {}
 
   ngOnChanges() {
     const url = this.navService.currentUrl();
@@ -42,23 +44,21 @@ export class AppNavItemComponent implements OnChanges {
   }
 
   onItemSelected(item: NavItem) {
-    if (!item.children || !item.children.length) {
+    if (item.component) {
+      this.windowService.open(item.component, item.displayName ?? 'Window');
+    } else if (item.route) {
       this.router.navigate([item.route]);
     }
-    if (item.children && item.children.length) {
+
+    if (item.children?.length) {
       this.expanded = !this.expanded;
     }
-    //scroll
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-    if (!this.expanded) {
-      if (window.innerWidth < 1024) {
-        this.notify.emit();
-      }
+
+    if (!this.expanded && window.innerWidth < 1024) {
+      this.notify.emit();
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   openExternalLink(url: string): void {

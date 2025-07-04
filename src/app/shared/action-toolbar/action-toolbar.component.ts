@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
+import { Component, HostListener, EventEmitter, Output, Input } from '@angular/core';
 import { MaterialModule } from '../../material.module';
+import { WindowService } from 'src/app/shared/services/window.service';
 
 @Component({
+  standalone: true,
   selector: 'app-action-toolbar',
   templateUrl: './action-toolbar.component.html',
   styleUrls: ['./action-toolbar.component.scss'],
@@ -10,38 +12,55 @@ import { MaterialModule } from '../../material.module';
   ]
 })
 export class ActionToolbarComponent {
+  activeComponent: any;
+
+  constructor(private windowService: WindowService) {
+    // Escucha el componente enfocado y lo guarda en `activeComponent`
+    this.windowService.focusedWindow$.subscribe(win => {
+      this.activeComponent = win?.componentInstance;
+    });
+  }
+
+  @Output() create = new EventEmitter<void>();
+  @Output() edit = new EventEmitter<void>();
+  @Output() save = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
+  @Output() list = new EventEmitter<void>();
+  @Output() export = new EventEmitter<void>();
+
   @Input() canEdit = false;
   @Input() canDelete = false;
   @Input() canSave = false;
   @Input() canList = false;
   @Input() canExport = false;
 
-  @Output() create = new EventEmitter<void>();
-  @Output() edit = new EventEmitter<void>();
-  @Output() save = new EventEmitter<void>();
-  @Output() delete = new EventEmitter<void>();
-  @Output() search = new EventEmitter<void>();
-  @Output() list = new EventEmitter<void>();
-  @Output() export = new EventEmitter<void>();
+  // Botones que llaman a métodos del componente activo si existen
+  onCreate() { this.activeComponent?.onCreate?.(); }
+  onEdit() { this.activeComponent?.onEdit?.(); }
+  onDelete() { this.activeComponent?.onDelete?.(); }
+  onSave() { this.activeComponent?.onSave?.(); }
+  onSearch() { this.activeComponent?.onSearch?.(); }
+  onList() { this.activeComponent?.onList?.(); }
+  onExport() { this.activeComponent?.onExport?.(); }
 
-  // Escuchar teclas globales
+  // Atajos de teclado globales
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     switch (event.key) {
       case 'F2':
-        this.create.emit();
+        this.onCreate();
         break;
       case 'F9':
         event.preventDefault();
-        this.list.emit();
+        this.onList();
         break;
       case 'F5':
         event.preventDefault();
-        this.save.emit();
+        this.onSave();
         break;
       case 'F11':
         event.preventDefault();
-        this.export.emit();
+        this.onExport();
         break;
     }
   }
