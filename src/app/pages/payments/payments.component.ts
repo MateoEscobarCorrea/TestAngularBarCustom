@@ -14,6 +14,7 @@ export interface Payment {
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
+  standalone: true,
   imports: [
     MaterialModule,
     ActionToolbarComponent,

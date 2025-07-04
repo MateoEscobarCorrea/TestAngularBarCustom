@@ -1,23 +1,18 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  Injector,
-  Type,
-  ViewEncapsulation
-} from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, Injector, Type, ViewEncapsulation } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-
+import { CommonModule } from '@angular/common';
+import { NgComponentOutlet } from '@angular/common/dynamic';
 
 @Component({
   selector: 'app-window',
+  standalone: true,
   templateUrl: './windows.component.html',
   styleUrls: ['./windows.component.scss'],
   encapsulation: ViewEncapsulation.None,
   imports: [
-    MatIconModule
+    CommonModule,
+    MatIconModule,
+    NgComponentOutlet
   ]
 })
 export class WindowComponent {

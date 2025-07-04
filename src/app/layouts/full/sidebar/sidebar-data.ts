@@ -1,3 +1,4 @@
+import { PaymentsComponent } from 'src/app/pages/payments/payments.component';
 import { NavItem } from './nav-item/nav-item';
 
 export const navItems: NavItem[] = [
@@ -44,6 +45,7 @@ export const navItems: NavItem[] = [
     displayName: 'Payments',
     iconName: 'solar:password-minimalistic-input-line-duotone',
     route: '/ui-components/payments',
+    component: PaymentsComponent,
   },
 
   /*{

@@ -14,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 import { CommonModule } from '@angular/common';
+import { WindowService } from 'src/app/shared/services/window.service';
 
 @Component({
   selector: 'app-nav-item',
@@ -31,7 +32,7 @@ export class AppNavItemComponent implements OnChanges {
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() depth: any;
 
-  constructor(public navService: NavService, public router: Router) {}
+  constructor(public navService: NavService, public router: Router, private windowService: WindowService) {}
 
   ngOnChanges() {
     const url = this.navService.currentUrl();
@@ -42,6 +43,11 @@ export class AppNavItemComponent implements OnChanges {
   }
 
   onItemSelected(item: NavItem) {
+    if (item.component) {
+      this.windowService.open(item.component, "self");
+    } else if (item.route) {
+      this.router.navigate([item.route]);
+    }
     if (!item.children || !item.children.length) {
       this.router.navigate([item.route]);
     }
