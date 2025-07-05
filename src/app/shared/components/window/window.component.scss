@@ -56,6 +56,35 @@
     height: 100% !important;
     border-radius: 0;
   }
+  .resizer {
+    position: absolute;
+    background: transparent;
+    z-index: 10;
+
+    &.resizer-right {
+      width: 10px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      cursor: ew-resize;
+    }
+
+    &.resizer-bottom {
+      height: 10px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: ns-resize;
+    }
+
+    &.resizer-corner {
+      width: 15px;
+      height: 15px;
+      right: 0;
+      bottom: 0;
+      cursor: nwse-resize;
+    }
+  }
 }
 
 .app-window-header {

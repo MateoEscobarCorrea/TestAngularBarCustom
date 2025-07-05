@@ -44,6 +44,13 @@ export class WindowComponent implements AfterViewInit, OnInit {
   isMinimized = false;
   isMaximized = false;
 
+  resizing = false;
+  resizeDir: 'right' | 'bottom' | 'corner' | null = null;
+  startX = 0;
+  startY = 0;
+  startWidth = 0;
+  startHeight = 0;
+
   private minimizeSub?: Subscription;
 
   constructor(private injector: Injector) {}
@@ -88,4 +95,43 @@ export class WindowComponent implements AfterViewInit, OnInit {
       el.style.transform = 'none';
     }
   }
+  onResizeStart(event: MouseEvent, dir: 'right' | 'bottom' | 'corner') {
+    event.preventDefault();
+    this.resizing = true;
+    this.resizeDir = dir;
+    this.startX = event.clientX;
+    this.startY = event.clientY;
+
+    const rect = this.windowRef.nativeElement.getBoundingClientRect();
+    this.startWidth = rect.width;
+    this.startHeight = rect.height;
+
+    document.addEventListener('mousemove', this.onResizing);
+    document.addEventListener('mouseup', this.onResizeEnd);
+  }
+
+  onResizing = (event: MouseEvent) => {
+    if (!this.resizing || !this.resizeDir) return;
+
+    let newWidth = this.startWidth;
+    let newHeight = this.startHeight;
+
+    if (this.resizeDir === 'right' || this.resizeDir === 'corner') {
+      newWidth = this.startWidth + (event.clientX - this.startX);
+    }
+
+    if (this.resizeDir === 'bottom' || this.resizeDir === 'corner') {
+      newHeight = this.startHeight + (event.clientY - this.startY);
+    }
+
+    const el = this.windowRef.nativeElement;
+    el.style.width = newWidth + 'px';
+    el.style.height = newHeight + 'px';
+  };
+  onResizeEnd = () => {
+    this.resizing = false;
+    this.resizeDir = null;
+    document.removeEventListener('mousemove', this.onResizing);
+    document.removeEventListener('mouseup', this.onResizeEnd);
+  };
 }

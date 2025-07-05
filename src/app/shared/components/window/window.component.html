@@ -4,19 +4,19 @@
   [class.focused]="focused"
   [class.maximized]="isMaximized"
   cdkDrag
-  cdkDragHandle
   [cdkDragBoundary]="'.window-desktop-container'"
   (mousedown)="onFocus()"
   [style.display]="isMinimized ? 'none' : 'block'"
 >
-  <div class="app-window-header">
+  <!-- HEADER -->
+  <div class="app-window-header" cdkDragHandle>
     <span class="title">{{ title }}</span>
     <div class="window-actions">
-      <button mat-icon-button (click)="toggleMinimize()" class="minimize-btn" >
+      <button mat-icon-button (click)="toggleMinimize()" class="minimize-btn">
         <mat-icon>minimize</mat-icon>
       </button>
       <button mat-icon-button (click)="toggleMaximize()" class="maximize-btn">
-        <mat-icon>{{ isMaximized ? 'fullscreen_exit' : 'fullscreen' }}</mat-icon>
+        <mat-icon>{{ isMaximized ? "fullscreen_exit" : "fullscreen" }}</mat-icon>
       </button>
       <button mat-icon-button (click)="closed.emit()" class="close-btn">
         <mat-icon>close</mat-icon>
@@ -24,7 +24,13 @@
     </div>
   </div>
 
+  <!-- CONTENT -->
   <div class="app-window-content">
     <ng-template #container></ng-template>
   </div>
+
+  <!-- RESIZER HANDLES -->
+  <div class="resizer resizer-right" (mousedown)="onResizeStart($event, 'right')"></div>
+  <div class="resizer resizer-bottom" (mousedown)="onResizeStart($event, 'bottom')"></div>
+  <div class="resizer resizer-corner" (mousedown)="onResizeStart($event, 'corner')"></div>
 </div>
