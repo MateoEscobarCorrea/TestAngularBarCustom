@@ -16,4 +16,13 @@ export class WindowDesktopComponent {
   trackByFn(index: number, win: WindowInstance): string {
     return win.id;
   }
+
+  get minimizedWindows() {
+    return this.windowService.windows.filter(w => w.isMinimized);
+  }
+  restore(win: WindowInstance) {
+    win.onMinimizeChange?.next(false);
+    win.isMinimized = false;
+    this.windowService.focus(win);
+  }
 }

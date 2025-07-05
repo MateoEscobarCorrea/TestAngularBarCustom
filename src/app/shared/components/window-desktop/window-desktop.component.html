@@ -1,7 +1,6 @@
-<div class="desktop-container">
+<div class="window-desktop-container">
   <ng-container *ngFor="let win of windowService.windows; trackBy: trackByFn">
     <app-window
-        *ngFor="let win of windowService.windows; trackBy: trackByFn"
         [component]="win.component"
         [data]="win.data"
         [title]="win.title"
@@ -11,4 +10,12 @@
         (focusedEvent)="windowService.focus(win)"
       ></app-window>
   </ng-container>
+</div>
+<div class="minimized-bar" *ngIf="minimizedWindows.length > 0">
+  <button
+    *ngFor="let win of minimizedWindows"
+    class="minimized-btn"
+    (click)="restore(win)">
+    {{ win.title }}
+  </button>
 </div>

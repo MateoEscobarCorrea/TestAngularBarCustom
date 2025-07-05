@@ -10,22 +10,27 @@ import {
   AfterViewInit,
   ViewContainerRef,
   ComponentRef,
-  TemplateRef
+  TemplateRef,
+  ElementRef,
+  OnInit
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { WindowInstance } from '../../services/window.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-window',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, DragDropModule],
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class WindowComponent implements AfterViewInit {
+export class WindowComponent implements AfterViewInit, OnInit {
   @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+  @ViewChild('windowRef') windowRef!: ElementRef<HTMLDivElement>;
 
   @Input() component!: Type<any>;
   @Input() data: any;
@@ -39,7 +44,20 @@ export class WindowComponent implements AfterViewInit {
   isMinimized = false;
   isMaximized = false;
 
+  private minimizeSub?: Subscription;
+
   constructor(private injector: Injector) {}
+
+  ngOnInit(): void {
+    if (this.windowInstance?.onMinimizeChange) {
+      this.windowInstance.onMinimizeChange.subscribe((state: boolean) => {
+        this.isMinimized = state;
+      });
+      this.minimizeSub = this.windowInstance.onMinimizeChange.subscribe(value => {
+        this.isMinimized = value;
+      });
+    }
+  }
 
   onFocus() {
     this.focusedEvent.emit();
@@ -58,9 +76,16 @@ export class WindowComponent implements AfterViewInit {
 
   toggleMinimize() {
     this.isMinimized = !this.isMinimized;
+    if (this.windowInstance) {
+      this.windowInstance.isMinimized = this.isMinimized;
+    }
   }
 
   toggleMaximize() {
     this.isMaximized = !this.isMaximized;
+    if (this.isMaximized && this.windowRef) {
+      const el = this.windowRef.nativeElement;
+      el.style.transform = 'none';
+    }
   }
 }

@@ -1,16 +1,18 @@
 <div
+  #windowRef
   class="app-window"
   [class.focused]="focused"
   [class.maximized]="isMaximized"
   cdkDrag
   cdkDragHandle
+  [cdkDragBoundary]="'.window-desktop-container'"
   (mousedown)="onFocus()"
-  *ngIf="!isMinimized"
+  [style.display]="isMinimized ? 'none' : 'block'"
 >
   <div class="app-window-header">
     <span class="title">{{ title }}</span>
     <div class="window-actions">
-      <button mat-icon-button (click)="toggleMinimize()" class="minimize-btn" [disabled]="isMaximized">
+      <button mat-icon-button (click)="toggleMinimize()" class="minimize-btn" >
         <mat-icon>minimize</mat-icon>
       </button>
       <button mat-icon-button (click)="toggleMaximize()" class="maximize-btn">

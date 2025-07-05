@@ -1,5 +1,5 @@
 import { Injectable, Type } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export interface WindowInstance {
   id: string,
@@ -7,6 +7,8 @@ export interface WindowInstance {
   data?: any;
   title: string;
   componentInstance?: any; // importante para la toolbar
+  isMinimized?: boolean;
+  onMinimizeChange?: Subject<boolean>;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -18,7 +20,21 @@ export class WindowService {
   focusedWindow$ = this.focusedWindowSubject.asObservable();
 
   open(component: Type<any>, title: string, data?: any) {
-    const win: WindowInstance = { id: crypto.randomUUID(), component, title, data };
+    const existing = this.windows.find(w =>
+      w.component === component && w.title === title
+    );
+    if (existing) {
+      if (existing.onMinimizeChange) {
+        existing.onMinimizeChange.next(false); // notifica al componente
+      }
+
+      (existing as any).isMinimized = false;
+
+      this.focus(existing);
+      return;
+    }
+
+    const win: WindowInstance = { id: crypto.randomUUID(), component, title, data, onMinimizeChange: new Subject<boolean>(), };
     this.windows.push(win);
     this.focus(win);
   }
